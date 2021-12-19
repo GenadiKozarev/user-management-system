@@ -1,9 +1,14 @@
-import { v4 as uuidv4 } from 'uuid'
+const { v4: uuidv4 } = require('uuid')
 
 let users = []
 
-const getUsers = (req, res) => {
+export const getUsers = (req, res) => {
     res.send(users)
 }
 
-export default getUsers
+export const createUser = (req, res) => {
+    const user = req.body
+
+    users.push({...user, id: uuidv4()})
+    res.send('User added successfully.')
+}

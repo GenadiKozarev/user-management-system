@@ -13,7 +13,13 @@ const createUser = (req, res) => {
     res.send('User added successfully.')
 }
 
+const getUserById = (req, res) => {
+    const singleUser = users.filter((user) => user.id === req.params.id)
+    res.send(singleUser)
+}
+
 module.exports = {
     getUsers,
-    createUser
+    createUser,
+    getUserById
 }

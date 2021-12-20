@@ -7,11 +7,13 @@ import Home from "./pages/Home"
 import AddEdit from "./pages/AddEdit"
 import View from "./pages/View"
 import About from "./pages/About"
+import Header from "./components/Header";
 
 const App = () => {
     return (
         <BrowserRouter>
             <div className="App">
+                <Header />
                 <ToastContainer />
                 <Switch>
                     <Route exact path="/" component={Home}/>

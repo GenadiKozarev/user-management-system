@@ -23,9 +23,20 @@ const deleteUser = (req, res) => {
     res.send('User deleted successfully.')
 }
 
+const editUser = (req, res) => {
+    const user = users.find((user) => user.id === req.params.id)
+
+    user.name = req.body.name
+    user.email = req.body.email
+    user.contact = req.body.contact
+
+    res.send('User edited successfully.')
+}
+
 module.exports = {
     getUsers,
     createUser,
     getUserById,
-    deleteUser
+    deleteUser,
+    editUser
 }

@@ -18,8 +18,14 @@ const getUserById = (req, res) => {
     res.send(singleUser)
 }
 
+const deleteUser = (req, res) => {
+    users = users.filter((user) => user.id !== req.params.id)
+    res.send('User deleted successfully.')
+}
+
 module.exports = {
     getUsers,
     createUser,
-    getUserById
+    getUserById,
+    deleteUser
 }

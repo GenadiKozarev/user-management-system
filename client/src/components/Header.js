@@ -4,6 +4,17 @@ import './Header.css'
 
 const Header = () => {
     const [activeTab, setActiveTab] = useState("Home")
+    const location = useLocation()
+
+    useEffect(() => {
+        if (location.pathname === '/') {
+            setActiveTab('Home')
+        } else if (location.pathname === '/add') {
+            setActiveTab('AddUser')
+        } else if (location.pathname === '/about') {
+            setActiveTab('About')
+        }
+    }, [location])
 
     return (
         <div className="header">
@@ -24,7 +35,7 @@ const Header = () => {
                 </Link>
 
                 <Link to="/about">
-                    <p className={`${activeTab === "about" ? "active" : " "}`}
+                    <p className={`${activeTab === "About" ? "active" : " "}`}
                        onClick={() => setActiveTab("About")}>
                         About
                     </p>

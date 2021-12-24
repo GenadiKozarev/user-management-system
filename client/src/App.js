@@ -14,7 +14,7 @@ const App = () => {
         <BrowserRouter>
             <div className="App">
                 <Header />
-                <ToastContainer />
+                <ToastContainer position="top-center" />
                 <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route path="/add" component={AddEdit}/>
